@@ -118,7 +118,7 @@ class CSP {
   }
 
   /**
-   * Combined assigned and unassigned variables to enforce consistency
+   * Combine assigned and unassigned variables to enforce consistency
    * @function
    * @param {object} assigned - Assigned variables object
    * @param {object} unassigned - Unassigned variables object

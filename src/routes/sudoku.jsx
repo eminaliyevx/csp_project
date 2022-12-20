@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   ButtonGroup,
   Grid,
@@ -19,34 +20,7 @@ const SIZE = 9;
 const BLOCK_SIZE = Math.sqrt(SIZE) | 0;
 const initialFilled = {};
 
-const initialData = [
-  [[1, 1], 6],
-  [[1, 5], 2],
-  [[1, 6], 5],
-  [[1, 7], 8],
-  [[2, 5], 7],
-  [[3, 1], 8],
-  [[3, 3], 4],
-  [[3, 9], 9],
-  [[4, 1], 4],
-  [[4, 3], 7],
-  [[4, 4], 3],
-  [[4, 8], 2],
-  [[5, 2], 1],
-  [[5, 8], 9],
-  [[6, 2], 8],
-  [[6, 6], 4],
-  [[6, 7], 5],
-  [[6, 9], 7],
-  [[7, 1], 3],
-  [[7, 7], 7],
-  [[7, 9], 2],
-  [[8, 5], 9],
-  [[9, 3], 2],
-  [[9, 4], 5],
-  [[9, 5], 6],
-  [[9, 9], 1],
-];
+const initialData = [];
 initialData.forEach((item) => (initialFilled[item[0]] = item[1]));
 
 const Sudoku = () => {
@@ -120,8 +94,10 @@ const Sudoku = () => {
               {Array.from({ length: SIZE }).map((_, i) => (
                 <Tr key={`row-${i + 1}`}>
                   {Array.from({ length: SIZE }).map((_, j) => (
-                    <Td
+                    <Box
+                      as="td"
                       key={`row-column-${j + 1}`}
+                      boxSize={16}
                       border="2px"
                       borderColor="gray.400"
                       borderBottomColor={
@@ -143,10 +119,10 @@ const Sudoku = () => {
                         setSelectedCell([]);
                       }}
                     >
-                      <Text color="gray.800" fontSize="2xl" align="center">
+                      <Text color="gray.800" fontSize="4xl" align="center">
                         {result[[i + 1, j + 1]] || filled[[i + 1, j + 1]]}
                       </Text>
-                    </Td>
+                    </Box>
                   ))}
                 </Tr>
               ))}
@@ -176,7 +152,7 @@ const Sudoku = () => {
             ))}
           </SimpleGrid>
 
-          <ButtonGroup>
+          <ButtonGroup alignSelf="center">
             <Button size="lg" colorScheme="blue" onClick={() => solve()}>
               Solve
             </Button>

@@ -106,7 +106,7 @@ const MapColoring = () => {
     setTimeStep(1);
 
     for (let state in data) {
-      mapRef.current.querySelector(`#${state}`).style.fill = "#ccc";
+      mapRef.current.querySelector(`#${state}`).style.fill = "#f7fafc";
     }
   };
 

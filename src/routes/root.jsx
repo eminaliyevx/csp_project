@@ -7,7 +7,7 @@ const Root = () => {
     <Flex minH="100vh" direction="column">
       <Header />
 
-      <Container as="main" maxW="container.md" flex={1} mt={24} p={4}>
+      <Container as="main" maxW="container.lg" flex={1} mt={24} p={4}>
         <Outlet />
       </Container>
     </Flex>

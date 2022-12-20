@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { MapColoring, Root, Sudoku } from "../routes";
 
 const router = createBrowserRouter([
@@ -9,6 +9,10 @@ const router = createBrowserRouter([
       { element: <Sudoku />, index: true },
       { path: "map-coloring", element: <MapColoring /> },
     ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" />,
   },
 ]);
 
