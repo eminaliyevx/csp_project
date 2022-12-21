@@ -9,7 +9,6 @@ import {
   Table,
   TableContainer,
   Tbody,
-  Td,
   Text,
   Tr,
 } from "@chakra-ui/react";
